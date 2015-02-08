@@ -12,20 +12,24 @@
 	<dict>
 		<key>61F34725091517843122448ED05B14F2EC9450E6</key>
 		<string>github.com:vongdarakia/Donde.git</string>
+		<key>CEDBB16FDFE768755CF2D99F9FEBD79B24B9C103</key>
+		<string>https://github.com/marissamcdowell/Donde.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Donde.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>61F34725091517843122448ED05B14F2EC9450E6</key>
+		<string>../../../Donde</string>
+		<key>CEDBB16FDFE768755CF2D99F9FEBD79B24B9C103</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:vongdarakia/Donde.git</string>
+	<string>https://github.com/marissamcdowell/Donde.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>61F34725091517843122448ED05B14F2EC9450E6</string>
+	<string>CEDBB16FDFE768755CF2D99F9FEBD79B24B9C103</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>61F34725091517843122448ED05B14F2EC9450E6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Donde</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CEDBB16FDFE768755CF2D99F9FEBD79B24B9C103</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MyDonde</string>
 		</dict>
 	</array>
 </dict>

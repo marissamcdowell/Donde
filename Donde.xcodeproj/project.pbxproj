@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		491038351A85FB6E006C3374 /* ChooseFriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491038341A85FB6E006C3374 /* ChooseFriendsVC.swift */; };
+		491038381A860209006C3374 /* ChooseFriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491038361A860209006C3374 /* ChooseFriendCell.swift */; };
+		491038391A860209006C3374 /* ChooseFriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491038371A860209006C3374 /* ChooseFriendCell.xib */; };
+		491038411A860F45006C3374 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491038401A860F45006C3374 /* LoginVC.swift */; };
+		491038451A861290006C3374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 491038441A861290006C3374 /* Main.storyboard */; };
+		491038471A86864B006C3374 /* HomePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491038461A86864B006C3374 /* HomePageVC.swift */; };
+		4910384F1A86B178006C3374 /* box_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 4910384D1A86B178006C3374 /* box_checked.png */; };
+		491038501A86B178006C3374 /* box_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 4910384E1A86B178006C3374 /* box_empty.png */; };
+		491038521A86B58F006C3374 /* DondeMeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491038511A86B58F006C3374 /* DondeMeVC.swift */; };
+		491038541A86DCB3006C3374 /* FriendSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491038531A86DCB3006C3374 /* FriendSettingsVC.swift */; };
+		491038561A86F001006C3374 /* DondeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491038551A86F001006C3374 /* DondeUtils.swift */; };
+		491038631A8704C0006C3374 /* dondelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 491038621A8704C0006C3374 /* dondelogo.png */; };
+		491038651A8704ED006C3374 /* dondelogowithbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 491038641A8704ED006C3374 /* dondelogowithbackground.png */; };
+		49F80CE51A848419008C5D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F80CE41A848419008C5D72 /* AppDelegate.swift */; };
+		49F80CEC1A848419008C5D72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F80CEB1A848419008C5D72 /* Images.xcassets */; };
+		49F80CFB1A848419008C5D72 /* DondeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F80CFA1A848419008C5D72 /* DondeTests.swift */; };
+		49F80D051A848435008C5D72 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F80D041A848434008C5D72 /* CloudKit.framework */; };
+		49F80D071A84844F008C5D72 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F80D061A84844F008C5D72 /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49F80CF51A848419008C5D72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49F80CD71A848418008C5D72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49F80CDE1A848418008C5D72;
+			remoteInfo = Donde;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		491038341A85FB6E006C3374 /* ChooseFriendsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFriendsVC.swift; sourceTree = "<group>"; };
+		491038361A860209006C3374 /* ChooseFriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseFriendCell.swift; sourceTree = "<group>"; };
+		491038371A860209006C3374 /* ChooseFriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseFriendCell.xib; sourceTree = "<group>"; };
+		491038401A860F45006C3374 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		491038441A861290006C3374 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		491038461A86864B006C3374 /* HomePageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageVC.swift; sourceTree = "<group>"; };
+		4910384D1A86B178006C3374 /* box_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_checked.png; sourceTree = "<group>"; };
+		4910384E1A86B178006C3374 /* box_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_empty.png; sourceTree = "<group>"; };
+		491038511A86B58F006C3374 /* DondeMeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DondeMeVC.swift; sourceTree = "<group>"; };
+		491038531A86DCB3006C3374 /* FriendSettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSettingsVC.swift; sourceTree = "<group>"; };
+		491038551A86F001006C3374 /* DondeUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DondeUtils.swift; sourceTree = "<group>"; };
+		491038621A8704C0006C3374 /* dondelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dondelogo.png; sourceTree = "<group>"; };
+		491038641A8704ED006C3374 /* dondelogowithbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dondelogowithbackground.png; sourceTree = "<group>"; };
+		491038661A870D3E006C3374 /* Donde.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Donde.entitlements; sourceTree = "<group>"; };
+		49F80CDF1A848418008C5D72 /* Donde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donde.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49F80CE31A848418008C5D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F80CE41A848419008C5D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49F80CEB1A848419008C5D72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Donde/Images.xcassets; sourceTree = "<group>"; };
+		49F80CF41A848419008C5D72 /* DondeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DondeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49F80CF91A848419008C5D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F80CFA1A848419008C5D72 /* DondeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DondeTests.swift; sourceTree = "<group>"; };
+		49F80D041A848434008C5D72 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		49F80D061A84844F008C5D72 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49F80CDC1A848418008C5D72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49F80D071A84844F008C5D72 /* MapKit.framework in Frameworks */,
+				49F80D051A848435008C5D72 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49F80CF11A848419008C5D72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		491038481A868654006C3374 /* ChooseFriendsVC */ = {
+			isa = PBXGroup;
+			children = (
+				491038341A85FB6E006C3374 /* ChooseFriendsVC.swift */,
+				491038361A860209006C3374 /* ChooseFriendCell.swift */,
+				491038371A860209006C3374 /* ChooseFriendCell.xib */,
+			);
+			name = ChooseFriendsVC;
+			sourceTree = "<group>";
+		};
+		49F80CD61A848418008C5D72 = {
+			isa = PBXGroup;
+			children = (
+				49F80D081A848462008C5D72 /* Frameworks */,
+				49F80CE11A848418008C5D72 /* Donde */,
+				49F80CEB1A848419008C5D72 /* Images.xcassets */,
+				49F80CF71A848419008C5D72 /* DondeTests */,
+				49F80CE01A848418008C5D72 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49F80CE01A848418008C5D72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49F80CDF1A848418008C5D72 /* Donde.app */,
+				49F80CF41A848419008C5D72 /* DondeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49F80CE11A848418008C5D72 /* Donde */ = {
+			isa = PBXGroup;
+			children = (
+				491038661A870D3E006C3374 /* Donde.entitlements */,
+				491038441A861290006C3374 /* Main.storyboard */,
+				49F80CE41A848419008C5D72 /* AppDelegate.swift */,
+				491038401A860F45006C3374 /* LoginVC.swift */,
+				491038481A868654006C3374 /* ChooseFriendsVC */,
+				491038461A86864B006C3374 /* HomePageVC.swift */,
+				491038511A86B58F006C3374 /* DondeMeVC.swift */,
+				49F80CE21A848418008C5D72 /* Supporting Files */,
+				491038531A86DCB3006C3374 /* FriendSettingsVC.swift */,
+				491038551A86F001006C3374 /* DondeUtils.swift */,
+			);
+			path = Donde;
+			sourceTree = "<group>";
+		};
+		49F80CE21A848418008C5D72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				491038641A8704ED006C3374 /* dondelogowithbackground.png */,
+				491038621A8704C0006C3374 /* dondelogo.png */,
+				4910384D1A86B178006C3374 /* box_checked.png */,
+				4910384E1A86B178006C3374 /* box_empty.png */,
+				49F80CE31A848418008C5D72 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49F80CF71A848419008C5D72 /* DondeTests */ = {
+			isa = PBXGroup;
+			children = (
+				49F80CFA1A848419008C5D72 /* DondeTests.swift */,
+				49F80CF81A848419008C5D72 /* Supporting Files */,
+			);
+			path = DondeTests;
+			sourceTree = "<group>";
+		};
+		49F80CF81A848419008C5D72 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49F80CF91A848419008C5D72 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49F80D081A848462008C5D72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49F80D061A84844F008C5D72 /* MapKit.framework */,
+				49F80D041A848434008C5D72 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49F80CDE1A848418008C5D72 /* Donde */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49F80CFE1A848419008C5D72 /* Build configuration list for PBXNativeTarget "Donde" */;
+			buildPhases = (
+				49F80CDB1A848418008C5D72 /* Sources */,
+				49F80CDC1A848418008C5D72 /* Frameworks */,
+				49F80CDD1A848418008C5D72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Donde;
+			productName = Donde;
+			productReference = 49F80CDF1A848418008C5D72 /* Donde.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49F80CF31A848419008C5D72 /* DondeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49F80D011A848419008C5D72 /* Build configuration list for PBXNativeTarget "DondeTests" */;
+			buildPhases = (
+				49F80CF01A848419008C5D72 /* Sources */,
+				49F80CF11A848419008C5D72 /* Frameworks */,
+				49F80CF21A848419008C5D72 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49F80CF61A848419008C5D72 /* PBXTargetDependency */,
+			);
+			name = DondeTests;
+			productName = DondeTests;
+			productReference = 49F80CF41A848419008C5D72 /* DondeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49F80CD71A848418008C5D72 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				TargetAttributes = {
+					49F80CDE1A848418008C5D72 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 2S3D8J8M3T;
+					};
+					49F80CF31A848419008C5D72 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 49F80CDE1A848418008C5D72;
+					};
+				};
+			};
+			buildConfigurationList = 49F80CDA1A848418008C5D72 /* Build configuration list for PBXProject "Donde" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49F80CD61A848418008C5D72;
+			productRefGroup = 49F80CE01A848418008C5D72 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49F80CDE1A848418008C5D72 /* Donde */,
+				49F80CF31A848419008C5D72 /* DondeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49F80CDD1A848418008C5D72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				491038391A860209006C3374 /* ChooseFriendCell.xib in Resources */,
+				491038501A86B178006C3374 /* box_empty.png in Resources */,
+				4910384F1A86B178006C3374 /* box_checked.png in Resources */,
+				491038631A8704C0006C3374 /* dondelogo.png in Resources */,
+				491038451A861290006C3374 /* Main.storyboard in Resources */,
+				49F80CEC1A848419008C5D72 /* Images.xcassets in Resources */,
+				491038651A8704ED006C3374 /* dondelogowithbackground.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49F80CF21A848419008C5D72 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49F80CDB1A848418008C5D72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				491038471A86864B006C3374 /* HomePageVC.swift in Sources */,
+				491038351A85FB6E006C3374 /* ChooseFriendsVC.swift in Sources */,
+				491038541A86DCB3006C3374 /* FriendSettingsVC.swift in Sources */,
+				491038381A860209006C3374 /* ChooseFriendCell.swift in Sources */,
+				491038411A860F45006C3374 /* LoginVC.swift in Sources */,
+				49F80CE51A848419008C5D72 /* AppDelegate.swift in Sources */,
+				491038561A86F001006C3374 /* DondeUtils.swift in Sources */,
+				491038521A86B58F006C3374 /* DondeMeVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49F80CF01A848419008C5D72 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49F80CFB1A848419008C5D72 /* DondeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49F80CF61A848419008C5D72 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49F80CDE1A848418008C5D72 /* Donde */;
+			targetProxy = 49F80CF51A848419008C5D72 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		49F80CFC1A848419008C5D72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		49F80CFD1A848419008C5D72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49F80CFF1A848419008C5D72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Donde/Donde.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Donde/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		49F80D001A848419008C5D72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Donde/Donde.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = Donde/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		49F80D021A848419008C5D72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DondeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Donde.app/Donde";
+			};
+			name = Debug;
+		};
+		49F80D031A848419008C5D72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DondeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Donde.app/Donde";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49F80CDA1A848418008C5D72 /* Build configuration list for PBXProject "Donde" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49F80CFC1A848419008C5D72 /* Debug */,
+				49F80CFD1A848419008C5D72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49F80CFE1A848419008C5D72 /* Build configuration list for PBXNativeTarget "Donde" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49F80CFF1A848419008C5D72 /* Debug */,
+				49F80D001A848419008C5D72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49F80D011A848419008C5D72 /* Build configuration list for PBXNativeTarget "DondeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49F80D021A848419008C5D72 /* Debug */,
+				49F80D031A848419008C5D72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49F80CD71A848418008C5D72 /* Project object */;
+}

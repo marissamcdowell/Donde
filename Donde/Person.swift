@@ -21,22 +21,22 @@ enum Rtype {
     case CoWorker
     case Other
 }
-
-struct Person: NSObject{
-//Person is a structure, not a class, so
-//place it wherever you see it fit
-    let iCloudID: String
-    var icon: UIImage
-    var relationship: Rtype
-    
-    init(name: String, type : Rtype) {
-        self.iCloudID = name
-        self.relationship = Rtype
-    }
-}
-
-struct Memo{
-    let name: String
-    var rec: AVAudio
-    var relate: [Rtype]
-}
+//
+//struct Person: NSObject{
+////Person is a structure, not a class, so
+////place it wherever you see it fit
+//    let iCloudID: String
+//    var icon: UIImage
+//    var relationship: Rtype
+//    
+//    init(name: String, type : Rtype) {
+//        self.iCloudID = name
+//        self.relationship = Rtype
+//    }
+//}
+//
+//struct Memo{
+//    let name: String
+//    var rec: AVAudio
+//    var relate: [Rtype]
+//}

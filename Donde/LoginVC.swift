@@ -21,6 +21,8 @@ class LoginVC: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        let timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: Selector("timerDone"), userInfo: nil, repeats: false)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +30,9 @@ class LoginVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func timerDone() {
+        performSegueWithIdentifier("goToHome", sender: self)
+    }
     
     // MARK: - Navigation
 

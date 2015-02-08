@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  VoiceMemoViewController.swift
 //  Donde!
 //
 //  Created by  Apple on 2/5/15.
@@ -10,7 +10,10 @@ import UIKit
 import AVFoundation
 import Foundation
 
-class ViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegate {
+class VoiceMemoViewController: UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegate {
+    
+    // UI components
+    
 
     var recorder:AVAudioRecorder = AVAudioRecorder()
     var player:AVAudioPlayer = AVAudioPlayer()

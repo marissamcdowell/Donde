@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomePageVC: UIViewController {
+class HomePageVC: UIViewController, UIAlertViewDelegate {
     
     // ui components
     
@@ -37,7 +37,12 @@ class HomePageVC: UIViewController {
     }
     
     @IBAction func dondeMeClicked(sender: UIButton) {
-        
+        if( !DondeUtils().doesUserHaveFriends() ){
+            var alert = UIAlertView(title: "Not so fast", message: "Add some friends first!", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        } else {
+            performSegueWithIdentifier("goToDondeMe", sender: self)
+        }
     }
     
     @IBAction func alertMeClicked(sender: UIButton) {

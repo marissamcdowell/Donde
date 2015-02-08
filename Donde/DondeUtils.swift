@@ -28,5 +28,23 @@ let dondeCloudColor:UIColor = UIColor(
 
 class DondeUtils: NSObject {
     
+    func doesUserHaveFriends() -> Bool {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        return defaults.boolForKey("hasFriends")
+    }
+    
+    func setUserHasFriends(value:Bool){
+        var defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(value, forKey: "hasFriends")
+    }
+    
+    func addFriend(friendDict:NSDictionary){
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var friendsArray:NSMutableArray = defaults.objectForKey("userFriends")?.mutableCopy() as NSMutableArray
+        println("size of friends 1: \(friendsArray)")
+        friendsArray.addObject(friendDict)
+        println("size of friends 2: \(friendsArray)")        
+    }
+    
     
 }

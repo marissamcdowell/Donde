@@ -20,6 +20,13 @@
 		491038561A86F001006C3374 /* DondeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491038551A86F001006C3374 /* DondeUtils.swift */; };
 		491038631A8704C0006C3374 /* dondelogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 491038621A8704C0006C3374 /* dondelogo.png */; };
 		491038651A8704ED006C3374 /* dondelogowithbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 491038641A8704ED006C3374 /* dondelogowithbackground.png */; };
+		49B1F4FE1A87662B00ECF8AD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F4FC1A87662B00ECF8AD /* Person.swift */; };
+		49B1F5011A87678A00ECF8AD /* VoiceMemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F5001A87678A00ECF8AD /* VoiceMemoVC.swift */; };
+		49B1F5031A876C0900ECF8AD /* voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 49B1F5021A876C0900ECF8AD /* voice.png */; };
+		49B1F5051A876EDC00ECF8AD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B1F5041A876EDC00ECF8AD /* AVFoundation.framework */; };
+		49B1F5071A87727F00ECF8AD /* VoiceMemoSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F5061A87727F00ECF8AD /* VoiceMemoSettingsVC.swift */; };
+		49B1F50A1A87735B00ECF8AD /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F5081A87735B00ECF8AD /* SwitchCell.swift */; };
+		49B1F50B1A87735B00ECF8AD /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B1F5091A87735B00ECF8AD /* SwitchCell.xib */; };
 		49F80CE51A848419008C5D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F80CE41A848419008C5D72 /* AppDelegate.swift */; };
 		49F80CEC1A848419008C5D72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F80CEB1A848419008C5D72 /* Images.xcassets */; };
 		49F80CFB1A848419008C5D72 /* DondeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F80CFA1A848419008C5D72 /* DondeTests.swift */; };
@@ -52,6 +59,13 @@
 		491038621A8704C0006C3374 /* dondelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dondelogo.png; sourceTree = "<group>"; };
 		491038641A8704ED006C3374 /* dondelogowithbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dondelogowithbackground.png; sourceTree = "<group>"; };
 		491038661A870D3E006C3374 /* Donde.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Donde.entitlements; sourceTree = "<group>"; };
+		49B1F4FC1A87662B00ECF8AD /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		49B1F5001A87678A00ECF8AD /* VoiceMemoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceMemoVC.swift; sourceTree = "<group>"; };
+		49B1F5021A876C0900ECF8AD /* voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voice.png; sourceTree = "<group>"; };
+		49B1F5041A876EDC00ECF8AD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		49B1F5061A87727F00ECF8AD /* VoiceMemoSettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceMemoSettingsVC.swift; sourceTree = "<group>"; };
+		49B1F5081A87735B00ECF8AD /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
+		49B1F5091A87735B00ECF8AD /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		49F80CDF1A848418008C5D72 /* Donde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F80CE31A848418008C5D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49F80CE41A848419008C5D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B1F5051A876EDC00ECF8AD /* AVFoundation.framework in Frameworks */,
 				49F80D071A84844F008C5D72 /* MapKit.framework in Frameworks */,
 				49F80D051A848435008C5D72 /* CloudKit.framework in Frameworks */,
 			);
@@ -116,6 +131,7 @@
 		49F80CE11A848418008C5D72 /* Donde */ = {
 			isa = PBXGroup;
 			children = (
+				49B1F4FC1A87662B00ECF8AD /* Person.swift */,
 				491038661A870D3E006C3374 /* Donde.entitlements */,
 				491038441A861290006C3374 /* Main.storyboard */,
 				49F80CE41A848419008C5D72 /* AppDelegate.swift */,
@@ -126,6 +142,10 @@
 				49F80CE21A848418008C5D72 /* Supporting Files */,
 				491038531A86DCB3006C3374 /* FriendSettingsVC.swift */,
 				491038551A86F001006C3374 /* DondeUtils.swift */,
+				49B1F5001A87678A00ECF8AD /* VoiceMemoVC.swift */,
+				49B1F5061A87727F00ECF8AD /* VoiceMemoSettingsVC.swift */,
+				49B1F5081A87735B00ECF8AD /* SwitchCell.swift */,
+				49B1F5091A87735B00ECF8AD /* SwitchCell.xib */,
 			);
 			path = Donde;
 			sourceTree = "<group>";
@@ -133,6 +153,7 @@
 		49F80CE21A848418008C5D72 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49B1F5021A876C0900ECF8AD /* voice.png */,
 				491038641A8704ED006C3374 /* dondelogowithbackground.png */,
 				491038621A8704C0006C3374 /* dondelogo.png */,
 				4910384D1A86B178006C3374 /* box_checked.png */,
@@ -162,6 +183,7 @@
 		49F80D081A848462008C5D72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49B1F5041A876EDC00ECF8AD /* AVFoundation.framework */,
 				49F80D061A84844F008C5D72 /* MapKit.framework */,
 				49F80D041A848434008C5D72 /* CloudKit.framework */,
 			);
@@ -250,8 +272,10 @@
 			files = (
 				491038391A860209006C3374 /* ChooseFriendCell.xib in Resources */,
 				491038501A86B178006C3374 /* box_empty.png in Resources */,
+				49B1F5031A876C0900ECF8AD /* voice.png in Resources */,
 				4910384F1A86B178006C3374 /* box_checked.png in Resources */,
 				491038631A8704C0006C3374 /* dondelogo.png in Resources */,
+				49B1F50B1A87735B00ECF8AD /* SwitchCell.xib in Resources */,
 				491038451A861290006C3374 /* Main.storyboard in Resources */,
 				49F80CEC1A848419008C5D72 /* Images.xcassets in Resources */,
 				491038651A8704ED006C3374 /* dondelogowithbackground.png in Resources */,
@@ -272,12 +296,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B1F5011A87678A00ECF8AD /* VoiceMemoVC.swift in Sources */,
 				491038471A86864B006C3374 /* HomePageVC.swift in Sources */,
 				491038351A85FB6E006C3374 /* ChooseFriendsVC.swift in Sources */,
 				491038541A86DCB3006C3374 /* FriendSettingsVC.swift in Sources */,
 				491038381A860209006C3374 /* ChooseFriendCell.swift in Sources */,
+				49B1F50A1A87735B00ECF8AD /* SwitchCell.swift in Sources */,
 				491038411A860F45006C3374 /* LoginVC.swift in Sources */,
 				49F80CE51A848419008C5D72 /* AppDelegate.swift in Sources */,
+				49B1F4FE1A87662B00ECF8AD /* Person.swift in Sources */,
+				49B1F5071A87727F00ECF8AD /* VoiceMemoSettingsVC.swift in Sources */,
 				491038561A86F001006C3374 /* DondeUtils.swift in Sources */,
 				491038521A86B58F006C3374 /* DondeMeVC.swift in Sources */,
 			);

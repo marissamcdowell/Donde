@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UIAlertViewDelegate {
     
     // UI Components
     
@@ -35,6 +35,16 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
     let relationshipPicker:UIPickerView = UIPickerView()
     let relationshipArray:[String] = ["Mother","Father","Brother","Sister","Cousin","Friend","Best Friend","Boyfriend","Girlfriend","Coworker","Other"]
     
+    
+    var friendsToSet:[String]!
+    
+    var currentFriendDetails:NSMutableDictionary = ["name":"",
+        "relationship":"",
+        "DondeMe":"",
+        "AlertMe":"",
+        "MiJourney":""
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -60,16 +70,28 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         self.friendCircleLabel.layer.borderWidth = 1
         self.friendCircleLabel.layer.borderColor = dondeAsphaltColor.CGColor
         self.friendCircleLabel.layer.cornerRadius = 10
+        self.friendCircleLabel.text = friendsToSet[0]
+//        self.currentFriendDetails = [String:AnyObject]()
+        self.currentFriendDetails["name"] = friendsToSet[0]
         
         self.relationshipTextField.layer.borderWidth = 1
         self.relationshipTextField.layer.borderColor = dondeAsphaltColor.CGColor
         self.relationshipTextField.layer.cornerRadius = 10
         self.relationshipTextField.inputView = relationshipPicker
         
-//        let button:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: Selector(keyboardDoneClicked(<#sender: UIButton#>))
-//        relationshipPicker.delegate = self
-//        relationshipPicker.dataSource = self
+
+        relationshipPicker.delegate = self
+        relationshipPicker.dataSource = self
         
+        var doneBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "keyboardDoneClicked")
+        var toolbar = UIToolbar(frame: CGRectMake(0, 0, self.view.frame.size.width, 44))
+        var flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        var items = NSMutableArray()
+        items.addObject(flexSpace)
+        items.addObject(doneBtn)
+        toolbar.items = items
+        //doneToolbar.sizeToFit()
+        self.relationshipTextField.inputAccessoryView = toolbar
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,23 +99,35 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         // Dispose of any resources that can be recreated.
     }
     
-    func keyboardDoneClicked(sender: UIButton) {
-        
+    func keyboardDoneClicked()
+    {
+        relationshipTextField.resignFirstResponder()
     }
 
     @IBAction func checkboxClicked(sender: UIButton) {
+        if(sender.selected == false){
+            sender.selected = true;
+        } else {
+            sender.selected = false;
+        }
     }
 
     @IBAction func backButtonClicked(sender: UIButton) {
+        performSegueWithIdentifier("backToFriendList", sender: self)
     }
     @IBAction func nextButtonClicked(sender: UIButton) {
-        if( sender.titleLabel?.text == "Assign" ){
+        if( sender.titleLabel?.text == "Assign" && contains(relationshipArray,relationshipTextField.text) ){
             relationshipCircleView.hidden = true
             checkboxCircleView.hidden = false
-            nextButton.titleLabel?.text = "Next"
+            if( friendsToSet.count > 1){
+                nextButton.setTitle("Next", forState: UIControlState.Normal)
+            } else {
+                nextButton.setTitle("Done", forState: UIControlState.Normal)
+            }
+            
+            self.currentFriendDetails["relationship"] = self.relationshipTextField.text
+            
             var newX:CGFloat = (self.view.frame.size.width - self.checkboxCircleView.frame.size.width) / 2
-            //self.checkboxCircleView.frame = CGRect(x:newX, y: self.checkboxCircleView.frame.origin.y, width: self.checkboxCircleView.frame.size.width, height: self.checkboxCircleView.frame.size.height)
-            print(checkboxCircleView.frame.origin.x)
             UIView.animateWithDuration(1.0, animations: {
                 
                 // for the x-position I entered 320-50 (width of screen - width of the square)
@@ -114,8 +148,63 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
             })
             
         } else if( sender.titleLabel?.text == "Next" ){
-            print("future segue")
+            var box1 = checkbox1Button.selected
+            var box2 = checkbox2Button.selected
+            var box3 = checkbox3Button.selected
+            
+            self.currentFriendDetails["DondeMe"] = box1.description
+            self.currentFriendDetails["AlertMe"] = box2.description
+            self.currentFriendDetails["MiJourney"] = box3.description
+//            
+//            if( !box2 ){
+//                DondeUtils().addFriend(self.currentFriendDetails)
+//            } else {
+//                showAlertOptions()
+//            }
+            
+            //DondeUtils().addFriend(self.currentFriendDetails)
+            print(self.currentFriendDetails)
+            var defaults = NSUserDefaults.standardUserDefaults()
+            var friendsArrayOpt:NSMutableArray? = defaults.objectForKey("userFriends")?.mutableCopy() as? NSMutableArray
+            if let friendsArray = friendsArrayOpt {
+                friendsArray.addObject(self.currentFriendDetails)
+                defaults.setObject(friendsArray, forKey: "userFriends")
+            } else {
+                var friendsArray = NSMutableArray()
+                friendsArray.addObject(self.currentFriendDetails)
+                defaults.setObject(friendsArray, forKey: "userFriends")
+            }
+            
+            friendsToSet.removeAtIndex(0)
+            
+            // if more friends to go through
+            if( friendsToSet.count > 0 ){
+                currentFriendDetails = ["name":friendsToSet[0],
+                    "relationship":"",
+                    "DondeMe":"",
+                    "AlertMe":"",
+                    "MiJourney":""
+                ]
+                nextButton.setTitle("Assign", forState: UIControlState.Normal)
+                relationshipCircleView.hidden = false
+                checkboxCircleView.hidden = true
+                friendCircleLabel.text = friendsToSet[0]
+                checkbox1Button.selected = false
+                checkbox2Button.selected = false
+                checkbox3Button.selected = false
+                relationshipTextField.text = nil
+            }
+            
+        } else if( sender.titleLabel?.text == "Done" ){
+            performSegueWithIdentifier("friendSettingsToHome", sender: self)
+        }else {
+            var alert = UIAlertView(title: "Not so fast", message: "Choose a relationship first!", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
         }
+    }
+    
+    func showAlertOptions() {
+        println("alert options")
     }
     
     // picker view stuff
@@ -127,7 +216,7 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
     }
     
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int){
-        print(relationshipArray[row])
+        relationshipTextField.text = relationshipArray[row]
     }
     
     func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {

@@ -19,6 +19,7 @@ class ChooseFriendsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     // data properties
     var contactArray:[String] = ["Tim Jones","Bill Smith","Fred Fields"]
+    var checkboxArray = [UIButton]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class ChooseFriendsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         self.contactsTableView.layer.cornerRadius = 25
         self.contactsTableView.rowHeight = 44.0
         self.contactsTableView.tableFooterView = UIView(frame: CGRectZero)
+        self.contactsTableView.separatorColor = dondeAsphaltColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +48,7 @@ class ChooseFriendsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ChooseFriendCell = tableView.dequeueReusableCellWithIdentifier("ChooseCell") as ChooseFriendCell
         cell.nameLabel?.text = self.contactArray[indexPath.row]
+        checkboxArray.append(cell.checkboxButton)
         return cell;
     }
     
@@ -74,19 +77,45 @@ class ChooseFriendsVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     @IBAction func addClicked(sender: UIButton) {
+        var checkedFriends = [String]()
+        for var i=0; i<contactArray.count;i++ {
+            if( checkboxArray[i].selected ){
+                checkedFriends.append(contactArray[i])
+            }
+        }
+        if( checkedFriends.count == 0 ){
+            var alert = UIAlertView(title: "Not so fast", message: "Select some friends to continue!", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        } else {
+            performSegueWithIdentifier("goToFriendSettings", sender: self)
+        }
     }
     
     
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if( segue.identifier == "goToFriendSettings" ){
+            
+            var checkedFriends = [String]()
+            for var i=0; i<contactArray.count;i++ {
+                if( checkboxArray[i].selected ){
+                    checkedFriends.append(contactArray[i])
+                }
+            }
+            var segueVC = segue.destinationViewController as FriendSettingsVC
+            segueVC.friendsToSet = checkedFriends
+        } else if( segue.identifier == "backToHome" ){
+            for var i=0; i<contactArray.count;i++ {
+                checkboxArray[i].selected = false
+            }
+        }
     }
-    */
-
 }

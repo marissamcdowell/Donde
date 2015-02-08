@@ -31,38 +31,17 @@ class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //      redRecButton.enabled = false
+        redRecButton.enabled = true
         // Do any additional setup after loading the view, typically from a nib.
         
         tryAgainBtn.layer.cornerRadius = 10
         nextButton.layer.cornerRadius = 10
+//        
+//        recorder.delegate = self
+//        recorder.prepareToRecord()
+        setupRecorder()
         
     }
-    /*@IBAction func record(sender: UIButton) {
-    //This function will do the actual recording
-    if player != nil && player.playing {
-    player.stop()
-    }
-    
-    if recorder == nil {
-    println("recording. recorder nil")
-    redRecButton.setTitle("Pause", forState:.Normal)
-    recordWithPermission(true)
-    return
-    }
-    
-    if recorder != nil && recorder.recording {
-    println("pausing")
-    recorder.pause()
-    recordButton.setTitle("Continue", forState:.Normal)
-    
-    } else {
-    println("recording")
-    recordButton.setTitle("Pause", forState:.Normal)
-    //            recorder.record()
-    recordWithPermission(false)
-    }
-    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -72,11 +51,11 @@ class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegat
     
     @IBAction func buttonTouchesDidBegin(sender: AnyObject) {
         NSLog("Touches began")
-        var audioInst = AVAudioSession.sharedInstance()
-        if( audioInst.inputAvailable ){
-            //recorder.record()
+        var defaults = NSUserDefaults.standardUserDefaults()
+        if( defaults.boolForKey("micAccessAllowed") ){
+            recorder.record()
         } else {
-            var alert = UIAlertView(title: "No mic", message: "", delegate: self, cancelButtonTitle: "OK")
+            var alert = UIAlertView(title: "No Mic Access", message: "Go to Settings to give mic permission", delegate: self, cancelButtonTitle: "OK")
             alert.show()
         }
         
@@ -85,17 +64,17 @@ class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegat
     @IBAction func buttonTouchesDidEnd(sender: AnyObject) {
         NSLog("Touches ended")
         var audioInst = AVAudioSession.sharedInstance()
-        if( audioInst.inputAvailable ){
-//            recorder.stop()
-//            sleep(5)
-//            player.play()
+//        if( audioInst.inputAvailable ){
+            recorder.stop()
+            sleep(5)
+            player.play()
             tryAgainBtn.hidden = false
             nextButton.hidden = false
             holdAndRecordLabel.hidden = true
-        } else {
-            var alert = UIAlertView(title: "No mic", message: "", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-        }
+//        } else {
+//            var alert = UIAlertView(title: "No mic", message: "", delegate: self, cancelButtonTitle: "OK")
+//            alert.show()
+//        }
         
     }
     
@@ -108,6 +87,7 @@ class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegat
         var dirPaths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         var docsDir: AnyObject = dirPaths[0]
         var soundFilePath = docsDir.stringByAppendingPathComponent(currentFileName)
+        let newURL = NSURL(fileURLWithPath: soundFilePath)
         soundFileURL = NSURL(fileURLWithPath: soundFilePath)
         let filemanager = NSFileManager.defaultManager()
         if filemanager.fileExistsAtPath(soundFilePath) {
@@ -123,7 +103,7 @@ class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegat
             AVSampleRateKey : 44100.0
         ]
         var error: NSError?
-        recorder = AVAudioRecorder(URL: soundFileURL!, settings: recordSettings, error: &error)
+        recorder = AVAudioRecorder(URL: newURL, settings: recordSettings, error: &error)
         if let e = error {
             println(e.localizedDescription)
         } else {

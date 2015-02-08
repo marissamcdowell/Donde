@@ -224,7 +224,7 @@
                                             <constraint firstAttribute="width" constant="196" id="MwP-f6-aJ4"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
-                                        <state key="normal" title="Add Friends">
+                                        <state key="normal" title="Friends">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -308,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLR-3O-Bt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1653" y="964"/>
+            <point key="canvasLocation" x="557" y="256"/>
         </scene>
         <!--Donde MeVC-->
         <scene sceneID="Hyn-ep-htP">
@@ -358,7 +358,7 @@
                                                     <outlet property="delegate" destination="vAe-L3-SI1" id="Hu5-a5-vRH"/>
                                                 </connections>
                                             </textView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Contact Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d44-pX-rAt">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Group" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d44-pX-rAt">
                                                 <rect key="frame" x="48" y="166" width="472" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="88y-i1-7O3"/>
@@ -784,7 +784,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NN0-sc-FBI" userLabel="RelationshipCircle">
                                 <rect key="frame" x="352" y="287" width="232" height="232"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Relationship" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eak-Rm-bTG">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eak-Rm-bTG">
                                         <rect key="frame" x="26" y="72" width="180" height="40"/>
                                         <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -1208,8 +1208,8 @@
         <image name="voice.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WrJ-c0-rW0"/>
-        <segue reference="omP-FA-TBc"/>
-        <segue reference="Jfk-gt-MYI"/>
+        <segue reference="8Bc-sn-cTN"/>
+        <segue reference="abs-GU-MRg"/>
+        <segue reference="eUV-Q2-aEg"/>
     </inferredMetricsTieBreakers>
 </document>

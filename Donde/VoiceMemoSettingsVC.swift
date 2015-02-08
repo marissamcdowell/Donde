@@ -15,7 +15,7 @@ class VoiceMemoSettingsVC: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var doneButton: UIButton!
     
-    let relationshipArray:[String] = ["Mother","Father","Brother","Sister","Cousin","Friend","Best Friend","Boyfriend","Girlfriend","Coworker","Other"]
+    let relationshipArray:[String] = ["","Parent","Sibling","Best Friend","Friend","Family","Bae","Coworker","Other"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

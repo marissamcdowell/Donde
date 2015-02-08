@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        var audioInst = AVAudioSession.sharedInstance()
+        audioInst.requestRecordPermission({(granted: Bool)-> Void in
+            if granted {
+                var defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setBool(true, forKey: "micAccessAllowed")
+            } else {
+                println("Permission to record not granted")
+                var defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setBool(false, forKey: "micAccessAllowed")
+            }
+        })
         
         return true
     }

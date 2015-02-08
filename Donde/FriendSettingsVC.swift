@@ -33,7 +33,7 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
     @IBOutlet weak var nextButton: UIButton!
     
     let relationshipPicker:UIPickerView = UIPickerView()
-    let relationshipArray:[String] = ["","Mother","Father","Brother","Sister","Cousin","Friend","Best Friend","Boyfriend","Girlfriend","Coworker","Other"]
+    let relationshipArray:[String] = ["","Parent","Sibling","Best Friend","Friend","Family","Bae","Coworker","Other"]
     
     
     var friendsToSet:[String]!

@@ -18,6 +18,7 @@ class DondeCloudModel: NSObject {
     override init() {
         // 1
         container = CKContainer.defaultContainer()
+        
         container.requestApplicationPermission(CKApplicationPermissions.PermissionUserDiscoverability, completionHandler: {
             applicationPermissionStatus, error in
             // check (applicationPermissionStatus == CKApplicationPermissionStatus.Granted)
@@ -33,8 +34,10 @@ class DondeCloudModel: NSObject {
         contactFinder.usesBackgroundSession = true
         contactFinder.queuePriority = NSOperationQueuePriority.Normal
         
-        contactFinder.discoverAllContactsCompletionBlock = { (res:[AnyObject]!, error:NSError?) -> Void in
-            print("in contacts completion")
+        contactFinder.discoverAllContactsCompletionBlock = { (results:[AnyObject]!, error:NSError?) -> Void in
+            println("in contacts completion block")
+            println(error)
+            println(results)
         }
         container.addOperation(contactFinder)
     }

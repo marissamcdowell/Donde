@@ -30,7 +30,16 @@ class DondeUtils: NSObject {
     
     func doesUserHaveFriends() -> Bool {
         var defaults = NSUserDefaults.standardUserDefaults()
-        return defaults.boolForKey("hasFriends")
+        var friendArray:NSMutableArray? = defaults.objectForKey("userFriends") as? NSMutableArray
+        if let friends = friendArray? {
+            if friends.count > 0 {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
+        }
     }
     
     func setUserHasFriends(value:Bool){

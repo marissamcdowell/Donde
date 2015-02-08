@@ -27,6 +27,7 @@
 		49B1F5071A87727F00ECF8AD /* VoiceMemoSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F5061A87727F00ECF8AD /* VoiceMemoSettingsVC.swift */; };
 		49B1F50A1A87735B00ECF8AD /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F5081A87735B00ECF8AD /* SwitchCell.swift */; };
 		49B1F50B1A87735B00ECF8AD /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B1F5091A87735B00ECF8AD /* SwitchCell.xib */; };
+		49B1F50D1A87A9D700ECF8AD /* DondeCloudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F50C1A87A9D700ECF8AD /* DondeCloudModel.swift */; };
 		49F80CE51A848419008C5D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F80CE41A848419008C5D72 /* AppDelegate.swift */; };
 		49F80CEC1A848419008C5D72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F80CEB1A848419008C5D72 /* Images.xcassets */; };
 		49F80CFB1A848419008C5D72 /* DondeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F80CFA1A848419008C5D72 /* DondeTests.swift */; };
@@ -66,6 +67,7 @@
 		49B1F5061A87727F00ECF8AD /* VoiceMemoSettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceMemoSettingsVC.swift; sourceTree = "<group>"; };
 		49B1F5081A87735B00ECF8AD /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		49B1F5091A87735B00ECF8AD /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		49B1F50C1A87A9D700ECF8AD /* DondeCloudModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DondeCloudModel.swift; sourceTree = "<group>"; };
 		49F80CDF1A848418008C5D72 /* Donde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F80CE31A848418008C5D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49F80CE41A848419008C5D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				49B1F5061A87727F00ECF8AD /* VoiceMemoSettingsVC.swift */,
 				49B1F5081A87735B00ECF8AD /* SwitchCell.swift */,
 				49B1F5091A87735B00ECF8AD /* SwitchCell.xib */,
+				49B1F50C1A87A9D700ECF8AD /* DondeCloudModel.swift */,
 			);
 			path = Donde;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				491038411A860F45006C3374 /* LoginVC.swift in Sources */,
 				49F80CE51A848419008C5D72 /* AppDelegate.swift in Sources */,
 				49B1F4FE1A87662B00ECF8AD /* Person.swift in Sources */,
+				49B1F50D1A87A9D700ECF8AD /* DondeCloudModel.swift in Sources */,
 				49B1F5071A87727F00ECF8AD /* VoiceMemoSettingsVC.swift in Sources */,
 				491038561A86F001006C3374 /* DondeUtils.swift in Sources */,
 				491038521A86B58F006C3374 /* DondeMeVC.swift in Sources */,

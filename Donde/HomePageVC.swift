@@ -29,6 +29,7 @@ class HomePageVC: UIViewController, UIAlertViewDelegate {
         for button in buttonArray {
             button.layer.cornerRadius = 10
         }
+        
     }
 
     override func didReceiveMemoryWarning() {

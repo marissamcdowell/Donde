@@ -35,9 +35,9 @@ class DondeCloudModel: NSObject {
         contactFinder.queuePriority = NSOperationQueuePriority.Normal
         
         contactFinder.discoverAllContactsCompletionBlock = { (results:[AnyObject]!, error:NSError?) -> Void in
-            println("in contacts completion block")
-            println(error)
-            println(results)
+            if( error != nil ){
+                println(results)
+            }
         }
         container.addOperation(contactFinder)
     }

@@ -71,7 +71,7 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         self.friendCircleLabel.layer.borderColor = dondeAsphaltColor.CGColor
         self.friendCircleLabel.layer.cornerRadius = 10
         self.friendCircleLabel.text = friendsToSet[0]
-//        self.currentFriendDetails = [String:AnyObject]()
+
         self.currentFriendDetails["name"] = friendsToSet[0]
         
         self.relationshipTextField.layer.borderWidth = 1
@@ -148,32 +148,8 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
             })
             
         } else if( sender.titleLabel?.text == "Next" ){
-            var box1 = checkbox1Button.selected
-            var box2 = checkbox2Button.selected
-            var box3 = checkbox3Button.selected
             
-            self.currentFriendDetails["DondeMe"] = box1.description
-            self.currentFriendDetails["AlertMe"] = box2.description
-            self.currentFriendDetails["MiJourney"] = box3.description
-//            
-//            if( !box2 ){
-//                DondeUtils().addFriend(self.currentFriendDetails)
-//            } else {
-//                showAlertOptions()
-//            }
-            
-            //DondeUtils().addFriend(self.currentFriendDetails)
-            print(self.currentFriendDetails)
-            var defaults = NSUserDefaults.standardUserDefaults()
-            var friendsArrayOpt:NSMutableArray? = defaults.objectForKey("userFriends")?.mutableCopy() as? NSMutableArray
-            if let friendsArray = friendsArrayOpt {
-                friendsArray.addObject(self.currentFriendDetails)
-                defaults.setObject(friendsArray, forKey: "userFriends")
-            } else {
-                var friendsArray = NSMutableArray()
-                friendsArray.addObject(self.currentFriendDetails)
-                defaults.setObject(friendsArray, forKey: "userFriends")
-            }
+            collectCheckData()
             
             friendsToSet.removeAtIndex(0)
             
@@ -196,10 +172,40 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
             }
             
         } else if( sender.titleLabel?.text == "Done" ){
+            collectCheckData()
             performSegueWithIdentifier("friendSettingsToHome", sender: self)
         }else {
             var alert = UIAlertView(title: "Not so fast", message: "Choose a relationship first!", delegate: self, cancelButtonTitle: "OK")
             alert.show()
+        }
+    }
+    
+    func collectCheckData() {
+        var box1 = checkbox1Button.selected
+        var box2 = checkbox2Button.selected
+        var box3 = checkbox3Button.selected
+        
+        self.currentFriendDetails["DondeMe"] = box1.description
+        self.currentFriendDetails["AlertMe"] = box2.description
+        self.currentFriendDetails["MiJourney"] = box3.description
+        //
+        //            if( !box2 ){
+        //                DondeUtils().addFriend(self.currentFriendDetails)
+        //            } else {
+        //                showAlertOptions()
+        //            }
+        
+        //DondeUtils().addFriend(self.currentFriendDetails)
+        print(self.currentFriendDetails)
+        var defaults = NSUserDefaults.standardUserDefaults()
+        var friendsArrayOpt:NSMutableArray? = defaults.objectForKey("userFriends")?.mutableCopy() as? NSMutableArray
+        if let friendsArray = friendsArrayOpt {
+            friendsArray.addObject(self.currentFriendDetails)
+            defaults.setObject(friendsArray, forKey: "userFriends")
+        } else {
+            var friendsArray = NSMutableArray()
+            friendsArray.addObject(self.currentFriendDetails)
+            defaults.setObject(friendsArray, forKey: "userFriends")
         }
     }
     

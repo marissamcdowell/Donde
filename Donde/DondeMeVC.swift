@@ -69,14 +69,15 @@ class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate{
         let info : NSDictionary = notification.userInfo!
         let keyboardSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.frame
         
-        if( keyboardSize != nil ){
-            let insets: UIEdgeInsets = UIEdgeInsetsMake(self.scrollview.contentInset.top, 0, keyboardSize!.height, 0)
+        //if( keyboardSize != nil ){
+        var keyHeight:CGFloat = 224.0
+            let insets: UIEdgeInsets = UIEdgeInsetsMake(self.scrollview.contentInset.top, 0, keyHeight, 0)
             
             self.scrollview.contentInset = insets
             self.scrollview.scrollIndicatorInsets = insets
             
-            self.scrollview.contentOffset = CGPointMake(self.scrollview.contentOffset.x, self.scrollview.contentOffset.y + keyboardSize!.height)
-        }
+            self.scrollview.contentOffset = CGPointMake(self.scrollview.contentOffset.x, self.scrollview.contentOffset.y + keyHeight)
+        //}
     }
     
     func keyboardWillBeHidden (notification: NSNotification) {
@@ -84,12 +85,12 @@ class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate{
         let info : NSDictionary = notification.userInfo!
         let keyboardSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.frame
         
-        if( keyboardSize != nil ){
-            let insets: UIEdgeInsets = UIEdgeInsetsMake(self.scrollview.contentInset.top, 0, keyboardSize!.height, 0)
+        //if( keyboardSize != nil ){
+            let insets: UIEdgeInsets = UIEdgeInsetsMake(self.scrollview.contentInset.top, 0, 0, 0)
             
             self.scrollview.contentInset = insets
             self.scrollview.scrollIndicatorInsets = insets
-        }
+        //}
         
     }
     
@@ -123,6 +124,20 @@ class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate{
     func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
         textField.resignFirstResponder()
         
+        return true
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        if textView.text == "Message to send" {
+            textView.text = ""
+        }
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
         return true
     }
     /*

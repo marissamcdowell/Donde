@@ -8,11 +8,14 @@
 
 import UIKit
 import AVFoundation
+import MapKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
+    var user:User = User(name: "John Joe", iCloudID: "test@gmail.com")
+    var locationManager = CLLocationManager()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -33,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(NSMutableArray(), forKey: "userFriends")
+        
+        locationManager.delegate = self
         
         return true
     }
@@ -59,6 +64,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    // Updates user location and check if the user is within range of the destination.
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        // self.userLocation = CLLocationCoordinate2D(latitude: locations[0].latitude, longitude: locations[0].longitude)
+        var test:CLLocation = CLLocation(latitude: CLLocationDegrees(43.148193), longitude: CLLocationDegrees(-77.613341))
+        var userLocation:CLLocationCoordinate2D = (locations[0] as CLLocation).coordinate
+        println(userLocation.latitude)
+        
+        var range:Double = 1000
+        println("\(self.user.dondes.count)")
+        for (index, element) in enumerate(user.dondes) {
+            
+            var destination:CLLocation = CLLocation(latitude: CLLocationDegrees(element.destination.coordinate.latitude), longitude: CLLocationDegrees(element.destination.coordinate.longitude))
+            var distance:CLLocationDistance = test.distanceFromLocation(destination)
+            
+            println(test)
+            println(destination)
+            
+            println("\(distance) meters away")
+            // Remove donde if found.
+            println("\(distance) to \(element.radius)")
+            if( distance < element.radius ) {
+                println("Destination reached")
+                println("removing \(element) at index \(index)")
+                
+                user.dondes.removeAtIndex(index)
+                println("\(user.dondes.count)")
+                // If no dondes left, stop tracking the user's location
+                if(user.dondes.count == 0) {
+                    locationManager.stopUpdatingLocation()
+                }
+            }
+        }
+    }
 }
 

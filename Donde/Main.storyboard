@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -309,6 +309,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLR-3O-Bt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1485" y="175"/>
+        </scene>
+        <!--MapVC-->
+        <scene sceneID="ihJ-k5-R8O">
+            <objects>
+                <viewController id="1ZG-PJ-PK2" customClass="MapVC" customModule="Donde" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UFY-0x-BpE"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bg3-3b-3wt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G4q-Wz-LXa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lba-9c-NVy">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Vf8-Sa-fnu">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="G4q-Wz-LXa" id="vyh-b0-LJ1"/>
+                                </connections>
+                            </searchBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ic4-Rt-ixT">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <color key="barTintColor" red="0.11764705882352941" green="0.16078431372549021" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem id="RMZ-pM-YTu">
+                                        <nil key="title"/>
+                                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zKh-qp-5wd">
+                                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Start Donde">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onConfirmDonde:" destination="6Xh-Ec-iXq" eventType="touchUpInside" id="zee-pl-duL"/>
+                                                <segue destination="ziR-I1-KTg" kind="unwind" unwindAction="unwindToCreateDonde:" id="fWs-N9-ONW"/>
+                                            </connections>
+                                        </button>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vf8-Sa-fnu" firstAttribute="leading" secondItem="G4q-Wz-LXa" secondAttribute="leadingMargin" constant="-16" id="1El-jz-Fl3"/>
+                            <constraint firstItem="ic4-Rt-ixT" firstAttribute="leading" secondItem="G4q-Wz-LXa" secondAttribute="leadingMargin" constant="-16" id="HM0-fr-4tC"/>
+                            <constraint firstItem="lba-9c-NVy" firstAttribute="top" secondItem="Vf8-Sa-fnu" secondAttribute="bottom" id="a2o-zi-Fkl"/>
+                            <constraint firstItem="Bg3-3b-3wt" firstAttribute="top" secondItem="ic4-Rt-ixT" secondAttribute="bottom" id="c0t-03-wpU"/>
+                            <constraint firstItem="Vf8-Sa-fnu" firstAttribute="top" secondItem="UFY-0x-BpE" secondAttribute="bottom" id="dNS-UA-jpq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lba-9c-NVy" secondAttribute="trailing" constant="-16" id="dva-wK-0cU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vf8-Sa-fnu" secondAttribute="trailing" constant="-16" id="gsf-jO-9NT"/>
+                            <constraint firstItem="lba-9c-NVy" firstAttribute="leading" secondItem="G4q-Wz-LXa" secondAttribute="leadingMargin" constant="-16" id="neW-Vd-OUF"/>
+                            <constraint firstItem="Bg3-3b-3wt" firstAttribute="top" secondItem="lba-9c-NVy" secondAttribute="bottom" id="qpv-px-lBS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ic4-Rt-ixT" secondAttribute="trailing" constant="-16" id="xyq-2P-mVR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="theMapView" destination="lba-9c-NVy" id="PvC-du-21Y"/>
+                        <outlet property="theSearchBar" destination="Vf8-Sa-fnu" id="K3O-0L-uCy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Xh-Ec-iXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ziR-I1-KTg" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2129" y="255"/>
         </scene>
         <!--FriendsVC-->
         <scene sceneID="JxR-f0-RMn">
@@ -683,6 +751,9 @@
                                                 <exclude reference="yNl-AS-BeC"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <segue destination="1ZG-PJ-PK2" kind="show" identifier="ShowLocation" id="gHh-O6-SuZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaX-GE-Zn3">
                                         <rect key="frame" x="0.0" y="547" width="137" height="53"/>
@@ -1322,9 +1393,9 @@
         <image name="voice.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Lat-po-6XO"/>
+        <segue reference="eUV-Q2-aEg"/>
         <segue reference="5Nj-26-SeC"/>
         <segue reference="R3i-uT-OaP"/>
-        <segue reference="Bbr-ml-DSz"/>
-        <segue reference="eUV-Q2-aEg"/>
     </inferredMetricsTieBreakers>
 </document>

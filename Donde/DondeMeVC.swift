@@ -140,6 +140,25 @@ class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate{
         }
         return true
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowLocation" {
+            println(segue.destinationViewController.description)
+            let viewController:MapVC = segue.destinationViewController as MapVC
+            //            let mapVC = segue.destinationViewController as MapVC
+            let destinationStr:String = self.destinationTextField.text
+            viewController.destAddress = destinationStr
+            viewController.radius =  (radiusToDestinationTextField.text as NSString).doubleValue
+            viewController.group = contactNameTextField.text
+        }
+    }
+    
+    @IBAction func unwindToCreateDonde(segue: UIStoryboardSegue) {
+        println("ID \(segue.identifier)")
+        if segue.identifier == "ShowLocation" {
+            println("Unwinding")
+        }
+    }
     /*
     // MARK: - Navigation
 

@@ -196,7 +196,7 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         //            }
         
         //DondeUtils().addFriend(self.currentFriendDetails)
-        print(self.currentFriendDetails)
+        //print(self.currentFriendDetails)
         var defaults = NSUserDefaults.standardUserDefaults()
         var friendsArrayOpt:NSMutableArray? = defaults.objectForKey("userFriends")?.mutableCopy() as? NSMutableArray
         if let friendsArray = friendsArrayOpt {

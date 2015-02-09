@@ -8,14 +8,14 @@
 
 import UIKit
 
-class VoiceMemoSettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class VoiceMemoSettingsVC: UIViewController, UITableViewDataSource, UITableViewDelegate,UITextFieldDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var doneButton: UIButton!
     
-    let relationshipArray:[String] = ["","Parent","Sibling","Best Friend","Friend","Family","Bae","Coworker","Other"]
+    let relationshipArray:[String] = ["Parent","Sibling","Best Friend","Friend","Family","Bae","Coworker","Other"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +24,7 @@ class VoiceMemoSettingsVC: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.registerNib(UINib(nibName: "SwitchCell", bundle: nil), forCellReuseIdentifier: "SwitchCell")
         self.tableView.tableFooterView?.frame = CGRectZero
         self.nameTextField.layer.cornerRadius = 10
+        self.nameTextField.delegate = self
         self.tableView.rowHeight = 44.0
     }
 
@@ -62,5 +63,18 @@ class VoiceMemoSettingsVC: UIViewController, UITableViewDataSource, UITableViewD
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func textFieldDidBeginEditing(textField: UITextField!) {    //delegate method
+        
+    }
+    
+    func textFieldShouldEndEditing(textField: UITextField!) -> Bool {  //delegate method
+        return true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
+        textField.resignFirstResponder()
+        return true
+    }
 
 }

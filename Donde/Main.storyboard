@@ -87,7 +87,7 @@
                                 </state>
                                 <connections>
                                     <action selector="cancelClicked:" destination="okz-hu-BGZ" eventType="touchUpInside" id="GxQ-es-PbH"/>
-                                    <segue destination="bko-KL-2sT" kind="show" identifier="backToHome" id="RFS-MT-pZX"/>
+                                    <segue destination="WJC-Ty-Amw" kind="show" id="R3i-uT-OaP"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dondelogowithbackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="gj9-3F-DWQ">
@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJ5-uT-QlN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-298" y="855"/>
+            <point key="canvasLocation" x="-998" y="814"/>
         </scene>
         <!--Home PageVC-->
         <scene sceneID="AUI-dA-zmN">
@@ -230,7 +230,7 @@
                                         </state>
                                         <connections>
                                             <action selector="miJourneyClicked:" destination="bko-KL-2sT" eventType="touchUpInside" id="14H-Gu-tm9"/>
-                                            <segue destination="okz-hu-BGZ" kind="show" id="8Bc-sn-cTN"/>
+                                            <segue destination="WJC-Ty-Amw" kind="show" id="4gC-JO-zAK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -308,7 +308,121 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLR-3O-Bt1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="557" y="256"/>
+            <point key="canvasLocation" x="1485" y="175"/>
+        </scene>
+        <!--FriendsVC-->
+        <scene sceneID="JxR-f0-RMn">
+            <objects>
+                <viewController id="WJC-Ty-Amw" customClass="FriendsVC" customModule="Donde" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xfn-gZ-aqZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="n1F-c6-7OS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cNj-yA-vSj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tPA-zs-LrZ">
+                                <rect key="frame" x="0.0" y="128" width="600" height="406"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WJC-Ty-Amw" id="wVH-6A-ZpU"/>
+                                    <outlet property="delegate" destination="WJC-Ty-Amw" id="qxM-zo-pas"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dondelogowithbackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="w5A-aP-uvL">
+                                <rect key="frame" x="86" y="28" width="428" height="92"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="92" id="Czi-WH-Rvu"/>
+                                    <constraint firstAttribute="height" constant="92" id="VgI-Hs-xpc"/>
+                                    <constraint firstAttribute="width" constant="428" id="jwK-Cz-0cn"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="428" id="yhd-76-ItQ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bir-7R-Rmd">
+                                <rect key="frame" x="427" y="550" width="173" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="YWr-fe-j45"/>
+                                    <constraint firstAttribute="width" constant="173" id="j8g-g8-VMv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="173" id="qBa-pA-g7r"/>
+                                    <constraint firstAttribute="height" constant="50" id="r9x-jA-IWb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="30" maxY="0.0"/>
+                                <state key="normal" title="Add Friends">
+                                    <color key="titleColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="YWr-fe-j45"/>
+                                        <exclude reference="qBa-pA-g7r"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="okz-hu-BGZ" kind="show" id="5Nj-26-SeC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5O-SK-oJD">
+                                <rect key="frame" x="0.0" y="550" width="173" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Gmq-Uj-xHZ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="173" id="H5o-6G-2yq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="YcM-N0-dYk"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="173" id="i1c-74-M3V"/>
+                                    <constraint firstAttribute="width" constant="173" id="rJL-9V-xkv"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="zls-0Z-sAk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="H5o-6G-2yq"/>
+                                        <exclude reference="YcM-N0-dYk"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="bko-KL-2sT" kind="show" id="Bbr-ml-DSz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="n1F-c6-7OS" firstAttribute="top" secondItem="W5O-SK-oJD" secondAttribute="bottom" id="2gD-Ie-cb7"/>
+                            <constraint firstItem="bir-7R-Rmd" firstAttribute="top" secondItem="tPA-zs-LrZ" secondAttribute="bottom" constant="8" id="Q7v-8L-Dps"/>
+                            <constraint firstAttribute="trailing" secondItem="bir-7R-Rmd" secondAttribute="trailing" id="Uca-Qm-yTu"/>
+                            <constraint firstAttribute="centerX" secondItem="bir-7R-Rmd" secondAttribute="centerX" id="ZiR-aV-U0g"/>
+                            <constraint firstAttribute="trailing" secondItem="tPA-zs-LrZ" secondAttribute="trailing" id="agL-cf-AoA"/>
+                            <constraint firstItem="n1F-c6-7OS" firstAttribute="top" secondItem="tPA-zs-LrZ" secondAttribute="bottom" constant="66" id="bEJ-x6-yhr"/>
+                            <constraint firstItem="n1F-c6-7OS" firstAttribute="top" secondItem="bir-7R-Rmd" secondAttribute="bottom" id="cMz-JP-phy"/>
+                            <constraint firstItem="w5A-aP-uvL" firstAttribute="top" secondItem="xfn-gZ-aqZ" secondAttribute="bottom" constant="8" id="fU5-34-y5C"/>
+                            <constraint firstAttribute="centerX" secondItem="w5A-aP-uvL" secondAttribute="centerX" id="iDb-wj-LKd"/>
+                            <constraint firstItem="W5O-SK-oJD" firstAttribute="leading" secondItem="cNj-yA-vSj" secondAttribute="leading" id="keI-kU-adc"/>
+                            <constraint firstItem="tPA-zs-LrZ" firstAttribute="top" secondItem="w5A-aP-uvL" secondAttribute="bottom" constant="8" id="lVW-WR-0Ch"/>
+                            <constraint firstItem="tPA-zs-LrZ" firstAttribute="top" secondItem="cNj-yA-vSj" secondAttribute="top" id="nvr-WO-jC8"/>
+                            <constraint firstItem="tPA-zs-LrZ" firstAttribute="leading" secondItem="cNj-yA-vSj" secondAttribute="leading" id="uEu-jg-dki"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nvr-WO-jC8"/>
+                                <exclude reference="Q7v-8L-Dps"/>
+                                <exclude reference="ZiR-aV-U0g"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tableview" destination="tPA-zs-LrZ" id="Qev-SZ-zTU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nuk-AU-QNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="706" y="-17"/>
         </scene>
         <!--Donde MeVC-->
         <scene sceneID="Hyn-ep-htP">
@@ -1208,8 +1322,9 @@
         <image name="voice.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8Bc-sn-cTN"/>
-        <segue reference="abs-GU-MRg"/>
+        <segue reference="5Nj-26-SeC"/>
+        <segue reference="R3i-uT-OaP"/>
+        <segue reference="Bbr-ml-DSz"/>
         <segue reference="eUV-Q2-aEg"/>
     </inferredMetricsTieBreakers>
 </document>

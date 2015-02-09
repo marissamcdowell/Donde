@@ -28,6 +28,11 @@
 		49B1F50A1A87735B00ECF8AD /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F5081A87735B00ECF8AD /* SwitchCell.swift */; };
 		49B1F50B1A87735B00ECF8AD /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B1F5091A87735B00ECF8AD /* SwitchCell.xib */; };
 		49B1F50D1A87A9D700ECF8AD /* DondeCloudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F50C1A87A9D700ECF8AD /* DondeCloudModel.swift */; };
+		49B1F50F1A87FB6000ECF8AD /* FriendsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F50E1A87FB6000ECF8AD /* FriendsVC.swift */; };
+		49B1F5121A88035F00ECF8AD /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1F5101A88035F00ECF8AD /* FriendCell.swift */; };
+		49B1F5131A88035F00ECF8AD /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B1F5111A88035F00ECF8AD /* FriendCell.xib */; };
+		49B1F5151A881F0600ECF8AD /* drum01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 49B1F5141A881F0600ECF8AD /* drum01.mp3 */; };
+		49B1F5171A8821C900ECF8AD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B1F5161A8821C900ECF8AD /* AudioToolbox.framework */; };
 		49F80CE51A848419008C5D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F80CE41A848419008C5D72 /* AppDelegate.swift */; };
 		49F80CEC1A848419008C5D72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F80CEB1A848419008C5D72 /* Images.xcassets */; };
 		49F80CFB1A848419008C5D72 /* DondeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F80CFA1A848419008C5D72 /* DondeTests.swift */; };
@@ -68,6 +73,11 @@
 		49B1F5081A87735B00ECF8AD /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		49B1F5091A87735B00ECF8AD /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		49B1F50C1A87A9D700ECF8AD /* DondeCloudModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DondeCloudModel.swift; sourceTree = "<group>"; };
+		49B1F50E1A87FB6000ECF8AD /* FriendsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsVC.swift; sourceTree = "<group>"; };
+		49B1F5101A88035F00ECF8AD /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		49B1F5111A88035F00ECF8AD /* FriendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
+		49B1F5141A881F0600ECF8AD /* drum01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drum01.mp3; sourceTree = "<group>"; };
+		49B1F5161A8821C900ECF8AD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		49F80CDF1A848418008C5D72 /* Donde.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donde.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F80CE31A848418008C5D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49F80CE41A848419008C5D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B1F5171A8821C900ECF8AD /* AudioToolbox.framework in Frameworks */,
 				49B1F5051A876EDC00ECF8AD /* AVFoundation.framework in Frameworks */,
 				49F80D071A84844F008C5D72 /* MapKit.framework in Frameworks */,
 				49F80D051A848435008C5D72 /* CloudKit.framework in Frameworks */,
@@ -149,6 +160,9 @@
 				49B1F5081A87735B00ECF8AD /* SwitchCell.swift */,
 				49B1F5091A87735B00ECF8AD /* SwitchCell.xib */,
 				49B1F50C1A87A9D700ECF8AD /* DondeCloudModel.swift */,
+				49B1F50E1A87FB6000ECF8AD /* FriendsVC.swift */,
+				49B1F5101A88035F00ECF8AD /* FriendCell.swift */,
+				49B1F5111A88035F00ECF8AD /* FriendCell.xib */,
 			);
 			path = Donde;
 			sourceTree = "<group>";
@@ -156,6 +170,7 @@
 		49F80CE21A848418008C5D72 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49B1F5141A881F0600ECF8AD /* drum01.mp3 */,
 				49B1F5021A876C0900ECF8AD /* voice.png */,
 				491038641A8704ED006C3374 /* dondelogowithbackground.png */,
 				491038621A8704C0006C3374 /* dondelogo.png */,
@@ -186,6 +201,7 @@
 		49F80D081A848462008C5D72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49B1F5161A8821C900ECF8AD /* AudioToolbox.framework */,
 				49B1F5041A876EDC00ECF8AD /* AVFoundation.framework */,
 				49F80D061A84844F008C5D72 /* MapKit.framework */,
 				49F80D041A848434008C5D72 /* CloudKit.framework */,
@@ -274,10 +290,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				491038391A860209006C3374 /* ChooseFriendCell.xib in Resources */,
+				49B1F5151A881F0600ECF8AD /* drum01.mp3 in Resources */,
 				491038501A86B178006C3374 /* box_empty.png in Resources */,
 				49B1F5031A876C0900ECF8AD /* voice.png in Resources */,
 				4910384F1A86B178006C3374 /* box_checked.png in Resources */,
 				491038631A8704C0006C3374 /* dondelogo.png in Resources */,
+				49B1F5131A88035F00ECF8AD /* FriendCell.xib in Resources */,
 				49B1F50B1A87735B00ECF8AD /* SwitchCell.xib in Resources */,
 				491038451A861290006C3374 /* Main.storyboard in Resources */,
 				49F80CEC1A848419008C5D72 /* Images.xcassets in Resources */,
@@ -299,9 +317,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B1F50F1A87FB6000ECF8AD /* FriendsVC.swift in Sources */,
 				49B1F5011A87678A00ECF8AD /* VoiceMemoVC.swift in Sources */,
 				491038471A86864B006C3374 /* HomePageVC.swift in Sources */,
 				491038351A85FB6E006C3374 /* ChooseFriendsVC.swift in Sources */,
+				49B1F5121A88035F00ECF8AD /* FriendCell.swift in Sources */,
 				491038541A86DCB3006C3374 /* FriendSettingsVC.swift in Sources */,
 				491038381A860209006C3374 /* ChooseFriendCell.swift in Sources */,
 				49B1F50A1A87735B00ECF8AD /* SwitchCell.swift in Sources */,

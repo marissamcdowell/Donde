@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         var audioInst = AVAudioSession.sharedInstance()
+        
         audioInst.requestRecordPermission({(granted: Bool)-> Void in
             if granted {
                 var defaults = NSUserDefaults.standardUserDefaults()
@@ -29,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 defaults.setBool(false, forKey: "micAccessAllowed")
             }
         })
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(NSMutableArray(), forKey: "userFriends")
         
         return true
     }

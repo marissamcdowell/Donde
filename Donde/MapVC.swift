@@ -122,6 +122,8 @@ class MapVC: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
         locationManager.startUpdatingLocation()
         
         self.theMapView.showsUserLocation = true
+        
+        //performSegueWithIdentifier("goBackHome", sender: self)
     }
     
     

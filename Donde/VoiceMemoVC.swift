@@ -11,6 +11,7 @@ import UIKit
 import AVFoundation
 import Foundation
 import AudioToolbox
+import CloudKit
 
 class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegate {
     
@@ -23,6 +24,7 @@ class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegat
     
     var session = AVAudioSession.sharedInstance()
     
+    var file:CKAsset?
     var recorder:AVAudioRecorder?
     var player:AVAudioPlayer?
     
@@ -38,27 +40,31 @@ class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegat
         
         tryAgainBtn.layer.cornerRadius = 10
         nextButton.layer.cornerRadius = 10
-
+        
         setupRecorder()
         
         // headphone override
         var headphones = false
         var outputs = AVAudioSession.sharedInstance().currentRoute.outputs
-        for output in outputs{
-            if output.portType == "Headphones"{
-                println("Headphones detected")
-                headphones = true
-            }
-        }
-        var session = AVAudioSession.sharedInstance()
-        if headphones{
-            session?.overrideOutputAudioPort(AVAudioSessionPortOverride.None, error: nil)
-        }else{
-           session?.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker, error: nil)
-        }
+        //        for output in outputs{
+        //            if output.portType == "Headphones"{
+        //                println("Headphones detected")
+        //                headphones = true
+        //            }
+        //        }
+        //        var session = AVAudioSession.sharedInstance()
+        //        if headphones{
+        //            session?.overrideOutputAudioPort(AVAudioSessionPortOverride.None, error: nil)
+        //        }else{
+        //           session?.overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker, error: nil)
+        //        }
         
     }
     
+    @IBAction func nextClicked(sender: UIButton) {
+        
+        performSegueWithIdentifier("memoToSettings", sender: self)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -151,7 +157,7 @@ class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegat
         print("audioplayerdecodeerror")
         println(error)
     }
-
+    
     func recordWithPermission(setup:Bool) {
         let session:AVAudioSession = AVAudioSession.sharedInstance()
         // ios 8 and later
@@ -173,7 +179,7 @@ class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegat
             println("requestRecordPermission unrecognized")
         }
     }
-
+    
     func setSessionPlayback() {
         let session:AVAudioSession = AVAudioSession.sharedInstance()
         var error: NSError?
@@ -190,7 +196,7 @@ class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegat
             }
         }
     }
-
+    
     func setSessionPlayAndRecord() {
         let session:AVAudioSession = AVAudioSession.sharedInstance()
         var error: NSError?
@@ -219,6 +225,8 @@ class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegat
         var soundData = NSData(contentsOfURL: soundFileURL!)
         self.player = AVAudioPlayer(data: soundData, error: &error)
         
+        file? = CKAsset(fileURL:soundFileURL! )
+        
         println( soundData )
         
         if self.player == nil {
@@ -231,5 +239,13 @@ class VoiceMemoVC:UIViewController, AVAudioRecorderDelegate,AVAudioPlayerDelegat
         self.player?.prepareToPlay()
         self.player?.volume = 1.0
         self.player?.play()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var vc:VoiceMemoSettingsVC = segue.destinationViewController as VoiceMemoSettingsVC
+        
+        if let realfile = file {
+            vc.file = realfile
+        }
     }
 }

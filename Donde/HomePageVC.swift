@@ -56,12 +56,12 @@ class HomePageVC: UIViewController, UIAlertViewDelegate {
     }
     
     @IBAction func dondeMeClicked(sender: UIButton) {
-        if( !DondeUtils().doesUserHaveFriends() ){
-            var alert = UIAlertView(title: "Not so fast", message: "Add some friends first!", delegate: self, cancelButtonTitle: "OK")
-            alert.show()
-        } else {
+        //if( !DondeUtils().doesUserHaveFriends() ){
+//            var alert = UIAlertView(title: "Not so fast", message: "Add some friends first!", delegate: self, cancelButtonTitle: "OK")
+//            alert.show()
+        //} else {
             performSegueWithIdentifier("goToDondeMe", sender: self)
-        }
+        //}
     }
     
     @IBAction func alertMeClicked(sender: UIButton) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate{
+class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource{
     
     // UI Components
     @IBOutlet weak var scrollview: UIScrollView!
@@ -21,6 +21,10 @@ class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate{
     @IBOutlet weak var contactNameTextField: UITextField!
     
     @IBOutlet weak var messageToSendTextField: UITextView!
+    
+    let relationshipPicker:UIPickerView = UIPickerView()
+    let relationshipArray:[String] = ["","Parent","Sibling","Best Friend","Friend","Family","Bae","Coworker","Other"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,14 +39,25 @@ class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate{
         self.radiusToDestinationTextField.layer.borderColor = dondeAsphaltColor.CGColor
         self.radiusToDestinationTextField.delegate = self
         self.radiusToDestinationTextField.layer.cornerRadius = 10
-        self.messageToSendTextField.layer.borderWidth = 2
-        self.messageToSendTextField.layer.borderColor = dondeAsphaltColor.CGColor
-        self.messageToSendTextField.delegate = self
-        self.messageToSendTextField.layer.cornerRadius = 10
         self.contactNameTextField.layer.borderWidth = 2
         self.contactNameTextField.layer.borderColor = dondeAsphaltColor.CGColor
         self.contactNameTextField.layer.cornerRadius = 10
         self.contactNameTextField.delegate = self
+        
+        relationshipPicker.delegate = self
+        relationshipPicker.dataSource = self
+        
+        self.contactNameTextField.inputView = relationshipPicker
+        
+        var doneBtn = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "keyboardDoneClicked")
+        var toolbar = UIToolbar(frame: CGRectMake(0, 0, self.view.frame.size.width, 44))
+        var flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        var items = NSMutableArray()
+        items.addObject(flexSpace)
+        items.addObject(doneBtn)
+        toolbar.items = items
+        //doneToolbar.sizeToFit()
+        self.contactNameTextField.inputAccessoryView = toolbar
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +78,24 @@ class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate{
         
     }
     
+    @IBAction func dondeClicked(sender: UIButton) {
+        
+        if( (destinationTextField.text != nil && destinationTextField.text != ""  ) && (radiusToDestinationTextField.text != nil && radiusToDestinationTextField.text != ""   ) && (contactNameTextField.text != nil && contactNameTextField.text != ""  )){
+            println(destinationTextField.text)
+            println(radiusToDestinationTextField.text)
+            println(contactNameTextField.text)
+            performSegueWithIdentifier("goToMap", sender: self)
+        } else {
+            var alert = UIAlertView(title: "Not so fast", message: "Fill out the fields first!", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }
+        
+    }
+    func keyboardDoneClicked()
+    {
+        contactNameTextField.resignFirstResponder()
+    }
+    
     
     func keyboardWasShown (notification: NSNotification) {
         
@@ -70,14 +103,19 @@ class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate{
         let keyboardSize = info.objectForKey(UIKeyboardFrameBeginUserInfoKey)?.frame
         
         //if( keyboardSize != nil ){
-        var keyHeight:CGFloat = 224.0
-            let insets: UIEdgeInsets = UIEdgeInsetsMake(self.scrollview.contentInset.top, 0, keyHeight, 0)
-            
-            self.scrollview.contentInset = insets
-            self.scrollview.scrollIndicatorInsets = insets
-            
-            self.scrollview.contentOffset = CGPointMake(self.scrollview.contentOffset.x, self.scrollview.contentOffset.y + keyHeight)
-        //}
+        
+//        if( self.contactNameTextField.frame.size.height+self.contactNameTextField.frame.origin.y <  ){
+//            
+//        }
+//        
+//        var keyHeight:CGFloat = 224.0
+//            let insets: UIEdgeInsets = UIEdgeInsetsMake(self.scrollview.contentInset.top, 0, keyHeight, 0)
+//            
+//            self.scrollview.contentInset = insets
+//            self.scrollview.scrollIndicatorInsets = insets
+//            
+//            self.scrollview.contentOffset = CGPointMake(self.scrollview.contentOffset.x, self.scrollview.contentOffset.y + keyHeight)
+//        //}
     }
     
     func keyboardWillBeHidden (notification: NSNotification) {
@@ -142,7 +180,7 @@ class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate{
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowLocation" {
+        if segue.identifier == "goToMap" {
             println(segue.destinationViewController.description)
             let viewController:MapVC = segue.destinationViewController as MapVC
             //            let mapVC = segue.destinationViewController as MapVC
@@ -155,7 +193,7 @@ class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate{
     
     @IBAction func unwindToCreateDonde(segue: UIStoryboardSegue) {
         println("ID \(segue.identifier)")
-        if segue.identifier == "ShowLocation" {
+        if segue.identifier == "goToMap" {
             println("Unwinding")
         }
     }
@@ -168,5 +206,21 @@ class DondeMeVC: UIViewController, UITextViewDelegate,UITextFieldDelegate{
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // picker view stuff
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return relationshipArray.count
+    }
+    
+    func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int){
+        contactNameTextField.text = relationshipArray[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView!, titleForRow row: Int, forComponent component: Int) -> String! {
+        return relationshipArray[row]
+    }
 
 }

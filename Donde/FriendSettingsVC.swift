@@ -15,17 +15,17 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var friendCircleView: UIView!
     @IBOutlet weak var friendCircleLabel: UITextField!
-
+    
     @IBOutlet weak var checkboxCircleView: UIView!
     @IBOutlet weak var checkbox1Button: UIButton!
     @IBOutlet weak var checkbox2Button: UIButton!
     @IBOutlet weak var checkbox3Button: UIButton!
-
+    
     @IBOutlet weak var checkbox1Label: UILabel!
     @IBOutlet weak var checkbox2Label: UILabel!
     @IBOutlet weak var checkbox3Label: UILabel!
     
-
+    
     @IBOutlet weak var relationshipCircleView: UIView!
     @IBOutlet weak var relationshipTextField: UITextField!
     
@@ -47,7 +47,7 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         self.checkboxCircleView.layer.cornerRadius = self.checkboxCircleView.frame.size.width/2
@@ -71,7 +71,7 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         self.friendCircleLabel.layer.borderColor = dondeAsphaltColor.CGColor
         self.friendCircleLabel.layer.cornerRadius = 10
         self.friendCircleLabel.text = friendsToSet[0]
-
+        
         self.currentFriendDetails["name"] = friendsToSet[0]
         
         self.relationshipTextField.layer.borderWidth = 1
@@ -79,7 +79,7 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         self.relationshipTextField.layer.cornerRadius = 10
         self.relationshipTextField.inputView = relationshipPicker
         
-
+        
         relationshipPicker.delegate = self
         relationshipPicker.dataSource = self
         
@@ -93,7 +93,7 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
         //doneToolbar.sizeToFit()
         self.relationshipTextField.inputAccessoryView = toolbar
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -103,7 +103,7 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
     {
         relationshipTextField.resignFirstResponder()
     }
-
+    
     @IBAction func checkboxClicked(sender: UIButton) {
         if(sender.selected == false){
             sender.selected = true;
@@ -111,7 +111,7 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
             sender.selected = false;
         }
     }
-
+    
     @IBAction func backButtonClicked(sender: UIButton) {
         performSegueWithIdentifier("backToFriendList", sender: self)
     }
@@ -126,6 +126,11 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
             }
             
             self.currentFriendDetails["relationship"] = self.relationshipTextField.text
+            
+            if self.relationshipTextField.text == "Best Friend" {
+                checkbox1Button.selected = true
+                checkbox3Button.selected = true
+            }
             
             var newX:CGFloat = (self.view.frame.size.width - self.checkboxCircleView.frame.size.width) / 2
             UIView.animateWithDuration(1.0, animations: {
@@ -231,12 +236,12 @@ class FriendSettingsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDe
     
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

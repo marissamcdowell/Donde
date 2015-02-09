@@ -26,6 +26,7 @@ class VoiceMemoSettingsVC: UIViewController, UITableViewDataSource, UITableViewD
         self.nameTextField.layer.cornerRadius = 10
         self.nameTextField.delegate = self
         self.tableView.rowHeight = 44.0
+        self.tableView.bounces = false
     }
 
     override func didReceiveMemoryWarning() {
